@@ -32,7 +32,7 @@ const Projects = () => {
     {
       title: 'E-Commerce Web Application',
       description: 'Developed a full-stack e-commerce app using Flask (backend), ReactJS (frontend), and PostgreSQL (database). Focused on database design, creating and implementing 7 well-structured tables with relationships to manage users, products, carts. Built optimized SQL queries and ensured data integrity, normalization, and indexing for performance. Integrated Firebase authentication to secure user accounts and linked database operations with user sessions.',
-      image: 'src/Page/ECommerce.png',
+      image: 'images/ECommerce.png',
       technologies: ['Flask', 'ReactJS', 'PostgreSQL', 'Firebase'],
       github: 'https://github.com/Sindhuyalamati/database_final_project',
       live: ''
@@ -40,7 +40,7 @@ const Projects = () => {
     {
       title: 'UNR Academic Calender Development',
       description: 'Created a responsive academic calendar as part of our course work utilizing HTML, CSS, ReactJS, and Next.js technologies. Developed ReactJS components for dynamic data rendering and utilized Next.js to enhance server-side rendering performance. Utilized Git and agile methodologies to facilitate seamless development processes and maintain effective version control. Designed a user-friendly, mobile-responsive interface with a focus on UI/UX and cross-browser compatibility for improved navigation.',
-      image: 'src/Page/image.webp',
+      image: 'images/image.webp',
       technologies: ['ReactJS', 'Next.js', 'HTML', 'CSS', 'Agile'],
       github: 'https://github.com/hastings-unr/Team3',
       live: ''

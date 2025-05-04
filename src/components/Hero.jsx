@@ -43,7 +43,7 @@ const Hero = () => {
           <motion.div className="hero-buttons" variants={fadeInVariants} custom={4}>
             <a href="#projects" className="btn btn-primary btn-solid">View My Work</a>
             <a href="#contact" className="btn btn-primary btn-solid">Contact Me</a>
-            <a href="src/Page/Sindhu_resume.pdf" download className="btn btn-primary btn-solid">Download Resume</a>
+            <a href="images/Sindhu_resume.pdf" download className="btn btn-primary btn-solid">Download Resume</a>
           </motion.div>
         </motion.div>
       </div>

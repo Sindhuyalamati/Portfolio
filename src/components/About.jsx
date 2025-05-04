@@ -83,7 +83,7 @@ const About = () => {
   return (
     <section id="about" className="about about-bg-video-section">
       <div className="about-bg-video-wrapper">
-        <video className="about-bg-video" src="src/Page/aboutbg.mp4" autoPlay loop muted playsInline />
+        <video className="about-bg-video" src="images/aboutbg.mp4" autoPlay loop muted playsInline />
         <div className="about-bg-overlay" />
       </div>
       <div className="container about-modern about-maxw-7xl" style={{ position: 'relative', zIndex: 2 }}>
