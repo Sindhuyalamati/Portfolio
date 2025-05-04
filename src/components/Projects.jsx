@@ -24,7 +24,7 @@ const Projects = () => {
     {
       title: 'Territory Maker',
       description: 'Territory Maker is an interactive web application that allows users to create, manage, and visualize geographic territories based on U.S. ZIP codes. Built with dynamic mapping (Leaflet.js + Supabase backend), the tool supports zoom-based loading of ZIP code boundaries and enables users to define territories by selecting ZIP codes directly on the map. Key features include real-time territory creation, dynamic fetching of ZIP data within the current map bounds, smooth panning and zooming, and clear visual indicators for selected regions. The application is optimized for performance, ensuring a seamless experience even when managing large datasets across the entire United States.',
-      image: '/image.png',
+      image: 'images/image.png',
       technologies: ['React', 'Leaflet.js', 'Supabase', 'Tailwind CSS', 'TypeScript'],
       github: 'https://github.com/Sindhuyalamati/Territory_Tool',
       live: 'https://territory-tool.vercel.app/'
