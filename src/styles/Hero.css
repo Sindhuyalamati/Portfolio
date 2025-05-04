@@ -79,7 +79,7 @@
   align-items: center;
   justify-content: flex-end;
   position: relative;
-  background: url('images/bg.jpeg') center center/cover no-repeat;
+  background: url('/images/bg.jpeg') center center/cover no-repeat;
   padding-top: 0;
   padding-bottom: 0;
 }
