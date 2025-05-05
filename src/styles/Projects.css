@@ -17,39 +17,43 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   min-height: 320px;
   background: #18181c;
   border-radius: 18px;
   border: 1.5px solid #23232b;
   box-shadow: 0 8px 40px 0 rgba(0,0,0,0.22);
-  transition: box-shadow 0.35s cubic-bezier(.4,2,.6,1), border-color 0.3s, background 0.3s;
-  gap: 32px;
   padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
+  transform: translateY(-5px);
   box-shadow: 0 12px 48px 0 rgba(229,9,20,0.18), 0 8px 40px 0 rgba(0,0,0,0.22);
   border-color: #e50914;
 }
 
 .project-window {
+  flex: 0 0 420px;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
   padding: 18px 18px 12px 18px;
-  margin-right: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 100%;
-  width: 100%;
-  transition: box-shadow 0.35s cubic-bezier(.4,2,.6,1), transform 0.35s cubic-bezier(.4,2,.6,1);
+  height: 240px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover .project-window {
+  transform: scale(1.02);
+  box-shadow: 0 8px 32px 0 rgba(229,9,20,0.15);
 }
 
 .project-image {
-  max-width: 100%;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,11 +63,11 @@
 
 .project-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
   border-radius: 8px;
   box-shadow: none;
-  transition: transform 0.35s cubic-bezier(.4,2,.6,1);
+  transition: transform 0.5s ease;
 }
 
 .project-card:hover .project-image img {
@@ -76,7 +80,7 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  padding: 1.5rem;
+  padding: 0 2rem;
 }
 
 .project-content h3 {
@@ -85,7 +89,11 @@
   font-size: 24px;
   font-weight: 800;
   letter-spacing: 0.01em;
-  text-shadow: 0 4px 18px rgba(229,9,20,0.10), 0 2px 8px rgba(0,0,0,0.18);
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-content h3 {
+  color: #e50914;
 }
 
 .project-content p {
@@ -96,14 +104,11 @@
   line-height: 1.5;
   max-width: 60ch;
   text-align: justify;
-  opacity: 0;
-  animation: fadeInDesc 0.9s 0.2s ease forwards;
-  transition: color 0.3s cubic-bezier(.4,2,.6,1), text-shadow 0.3s cubic-bezier(.4,2,.6,1);
+  transition: color 0.3s ease;
 }
 
-@keyframes fadeInDesc {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: none; }
+.project-card:hover .project-content p {
+  color: #fff;
 }
 
 .desc-tech {
@@ -115,11 +120,6 @@
   background-clip: initial;
 }
 
-.project-card:hover .project-content p {
-  color: #fff;
-  text-shadow: 0 2px 12px rgba(229,9,20,0.10);
-}
-
 .read-more {
   color: #e50914;
   cursor: pointer;
@@ -127,14 +127,12 @@
   margin-left: 6px;
   font-size: 1em;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.2s, color 0.2s;
+  transition: color 0.3s ease;
 }
 
 .read-more:hover {
-  text-decoration: underline;
-  border-bottom: 2px solid #e50914;
   color: #ff2a36;
+  text-decoration: underline;
 }
 
 .project-tech {
@@ -147,6 +145,7 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
 .project-tech::-webkit-scrollbar {
   display: none;
 }
@@ -162,14 +161,14 @@
   letter-spacing: 0.01em;
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08);
   margin-bottom: 2px;
-  transition: background 0.2s, color 0.2s, border 0.2s;
   white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
 .tech-tag:hover {
-  background: rgba(36,36,40,0.18);
+  background: rgba(229,9,20,0.1);
   color: #e50914;
-  border: 1.5px solid #e50914;
+  border-color: #e50914;
 }
 
 .project-links {
@@ -190,13 +189,14 @@
   padding: 0.48rem 1.3rem;
   font-size: 1.05rem;
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10);
-  transition: background 0.2s, color 0.2s;
   border: none;
+  transition: all 0.3s ease;
 }
 
 .project-links a:hover {
   background: #e50914;
-  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px 0 rgba(229,9,20,0.2);
 }
 
 .project-links a::after {
@@ -204,28 +204,22 @@
 }
 
 @media (max-width: 1100px) {
-  .project-window {
-    min-width: 0;
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    margin-right: 0;
-    margin-bottom: 24px;
-    box-sizing: border-box;
-  }
-  .project-image {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-    height: auto;
-    box-sizing: border-box;
-  }
   .project-card {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .project-window {
+    flex: 0 0 auto;
     width: 100%;
-    box-sizing: border-box;
+    max-width: 420px;
+    margin: 0;
+  }
+  
+  .project-content {
+    padding: 0;
+    width: 100%;
   }
 }
 
@@ -233,82 +227,23 @@
   flex-direction: row-reverse;
 }
 
-.project-card.reverse .project-window {
-  margin-right: 0;
-  margin-left: 48px;
-}
-
 @media (max-width: 900px) {
   .project-card,
   .project-card.reverse {
     flex-direction: column !important;
-    align-items: flex-start;
-    gap: 0;
-    padding: 1rem;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .project-window {
-    min-width: 0;
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    margin-right: 0;
-    margin-left: 0;
-    margin-bottom: 24px;
-    box-sizing: border-box;
-  }
-  .project-image {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-    height: auto;
-    box-sizing: border-box;
-  }
-}
-
-@media (max-width: 600px) {
-  .project-card,
-  .project-card.reverse {
-    flex-direction: column !important;
-    align-items: stretch;
-    gap: 0;
-    padding: 0.7rem;
-    min-height: unset;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .project-window,
-  .project-image,
-  .project-content {
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .project-window {
-    min-width: 0;
-    max-width: 100%;
-    margin-right: 0;
-    margin-left: 0;
-    margin-bottom: 16px;
-    padding: 8px 4px 4px 4px;
-  }
-  .project-image {
-    height: auto;
-    min-width: 0;
-    max-width: 100%;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    background: transparent;
-    overflow: hidden;
+    gap: 2rem;
+    padding: 1.5rem;
   }
-  .project-image img {
+  
+  .project-window {
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
+    max-width: 420px;
+    margin: 0;
   }
+  
   .project-content {
-    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    padding: 0;
+    width: 100%;
   }
 } 
