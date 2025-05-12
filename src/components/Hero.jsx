@@ -43,8 +43,8 @@ const Hero = () => {
           <motion.div className="hero-buttons" variants={fadeInVariants} custom={4}>
             <a href="#projects" className="btn btn-primary btn-solid">View My Work</a>
             <a href="#contact" className="btn btn-primary btn-solid">Contact Me</a>
-{/*             <a href="images/Sindhu_resume.pdf" download className="btn btn-primary btn-solid">Download Resume</a>
-          </motion.div> */}
+{/*             <a href="images/Sindhu_resume.pdf" download className="btn btn-primary btn-solid">Download Resume</a>  */}
+          </motion.div>
         </motion.div>
       </div>
       <motion.div className="hero-down-arrow" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 0.7, y: 0 }} transition={{ delay: 1.2, duration: 0.7, type: 'spring' }}>
