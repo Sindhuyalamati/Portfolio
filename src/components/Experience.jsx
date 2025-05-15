@@ -7,7 +7,7 @@ const experiences = [
   {
     role: 'AI Prompt Engineer & Full-Stack Developer Intern',
     company: 'FoxTow, Inc',
-    period: 'March 2025 – Present',
+    period: '2025 – Present',
     icon: <FaBriefcase />,
     details: [
       'Enhanced web UI/UX using React and Spring',
