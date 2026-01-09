@@ -18,34 +18,34 @@ const highlightTech = (desc, techs) => {
 };
 
 const Projects = () => {
-  const [expanded, setExpanded] = useState(Array(3).fill(false));
-
   const projects = [
     {
-      title: 'Territory Maker',
-      description: 'Territory Maker is an interactive web application that allows users to create, manage, and visualize geographic territories based on U.S. ZIP codes. Built with dynamic mapping (Leaflet.js + Supabase backend), the tool supports zoom-based loading of ZIP code boundaries and enables users to define territories by selecting ZIP codes directly on the map. Key features include real-time territory creation, dynamic fetching of ZIP data within the current map bounds, smooth panning and zooming, and clear visual indicators for selected regions. The application is optimized for performance, ensuring a seamless experience even when managing large datasets across the entire United States.',
+      title: 'Portfolio Website Development',
+      description: 'A responsive personal portfolio website showcasing my projects, experience, and skills. Built with modern web technologies focusing on UI/UX best practices. Features include smooth animations, responsive design, and optimized performance. Deployed on Vercel for fast global content delivery.',
+      image: 'images/first_project.png',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'React', 'Vercel'],
+      github: 'https://github.com/Sindhuyalamati',
+      live: 'https://sindhu-yalamati.vercel.app/'
+    },
+    {
+      title: 'Territory Maker - Interactive Web GIS Application',
+      description: 'A full-stack ZIP code territory management application built with React, Leaflet.js, Supabase, and TypeScript. Features dynamic ZIP code boundary loading based on map viewport, optimized map rendering for performance, and interactive territory creation. Users can select ZIP codes directly on the map to define territories, with real-time updates and smooth panning/zooming capabilities. The application efficiently handles large datasets across the entire United States.',
       image: 'images/image.png',
-      technologies: ['React', 'Leaflet.js', 'Supabase', 'Tailwind CSS', 'TypeScript'],
+      technologies: ['React', 'Leaflet.js', 'Supabase', 'TypeScript'],
       github: 'https://github.com/Sindhuyalamati/Territory_Tool',
       live: 'https://territory-tool.vercel.app/'
     },
     {
       title: 'E-Commerce Web Application',
-      description: 'Developed a full-stack e-commerce app using Flask (backend), ReactJS (frontend), and PostgreSQL (database). Focused on database design, creating and implementing 7 well-structured tables with relationships to manage users, products, carts. Built optimized SQL queries and ensured data integrity, normalization, and indexing for performance. Integrated Firebase authentication to secure user accounts and linked database operations with user sessions.',
+      description: 'A full-stack e-commerce application developed as a course project for Database Management Systems. Built with Flask (backend), ReactJS (frontend), and PostgreSQL (database). Focused on comprehensive database design with 7 well-structured tables managing users, products, and carts. Implemented optimized SQL queries with proper indexing for performance, ensured data integrity and normalization. Integrated Firebase authentication for secure user accounts and seamless session management.',
       image: 'images/ECommerce.png',
       technologies: ['Flask', 'ReactJS', 'PostgreSQL', 'Firebase'],
       github: 'https://github.com/Sindhuyalamati/database_final_project',
       live: ''
-    },
-    {
-      title: 'UNR Academic Calender Development',
-      description: 'Created a responsive academic calendar as part of our course work utilizing HTML, CSS, ReactJS, and Next.js technologies. Developed ReactJS components for dynamic data rendering and utilized Next.js to enhance server-side rendering performance. Utilized Git and agile methodologies to facilitate seamless development processes and maintain effective version control. Designed a user-friendly, mobile-responsive interface with a focus on UI/UX and cross-browser compatibility for improved navigation.',
-      image: 'images/image.webp',
-      technologies: ['ReactJS', 'Next.js', 'HTML', 'CSS', 'Agile'],
-      github: 'https://github.com/hastings-unr/Team3',
-      live: ''
     }
   ]
+
+  const [expanded, setExpanded] = useState(Array(projects.length).fill(false));
 
   const handleReadMore = idx => {
     setExpanded(prev => prev.map((val, i) => (i === idx ? !val : val)))

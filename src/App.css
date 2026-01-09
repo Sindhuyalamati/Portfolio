@@ -1,10 +1,21 @@
 :root {
   --primary-color: #e50914;
+  --primary-hover: #ff2a36;
+  --primary-light: rgba(229, 9, 20, 0.1);
   --secondary-color: #221f1f;
-  --text-color: #fff;
+  --text-color: #ffffff;
   --light-text: #b3b3b3;
-  --background: #141414;
-  --section-bg: #181818;
+  --lighter-text: #e0e0e0;
+  --background: #0a0a0a;
+  --section-bg: #111111;
+  --card-bg: #181818;
+  --card-border: #23232b;
+  --gradient-primary: linear-gradient(135deg, #e50914 0%, #ff2a36 100%);
+  --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --shadow-primary: 0 8px 32px rgba(229, 9, 20, 0.25);
 }
 
 * {
@@ -15,13 +26,43 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
 body {
-  font-family: 'Inter', 'Arial Black', Arial, sans-serif;
+  font-family: 'Epilogue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   line-height: 1.6;
   color: var(--text-color);
   background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  touch-action: pan-y;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, a, input, textarea {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .app {
@@ -36,8 +77,13 @@ main {
 }
 
 section {
-  padding: 5rem 1rem;
+  padding: 6rem 1rem;
   background: var(--section-bg);
+  position: relative;
+}
+
+section:nth-child(even) {
+  background: var(--background);
 }
 
 .container {
@@ -50,8 +96,16 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--text-color);
-  font-weight: 900;
+  font-weight: 400;
   letter-spacing: 1px;
+  text-transform: capitalize;
+  font-variant: small-caps;
+}
+
+h1::first-letter, h2::first-letter, h3::first-letter, h4::first-letter, h5::first-letter, h6::first-letter {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-variant: normal;
 }
 
 h1 {
@@ -85,11 +139,13 @@ p {
 .btn-primary {
   background-color: var(--primary-color);
   color: white;
+  font-weight: 500;
 }
 
 .btn-primary:hover {
-  background-color: #b0060f;
-  transform: scale(1.05);
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary);
 }
 
 .btn-secondary {
@@ -104,16 +160,73 @@ p {
   transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
+/* Responsive Typography */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 1024px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
   
   h2 {
-    font-size: 2rem;
+    font-size: 2.4rem;
+  }
+  
+  section {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
   }
   
   section {
     padding: 3rem 1rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  section {
+    padding: 2.5rem 0.8rem;
+  }
+  
+  .container {
+    padding: 0 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  section {
+    padding: 2rem 0.5rem;
   }
 } 

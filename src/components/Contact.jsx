@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa'
 import '../styles/Contact.css'
 
@@ -10,6 +11,9 @@ const Contact = () => {
     email: '',
     message: ''
   })
+  
+  const [loading, setLoading] = useState(false)
+  const [status, setStatus] = useState({ type: '', message: '' })
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -17,12 +21,60 @@ const Contact = () => {
       ...prev,
       [name]: value
     }))
+    // Clear status when user starts typing
+    if (status.message) {
+      setStatus({ type: '', message: '' })
+    }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Add your form submission logic here
-    console.log('Form submitted:', formData)
+    setLoading(true)
+    setStatus({ type: '', message: '' })
+
+    try {
+      // EmailJS configuration - Replace these with your own values
+      // You need to:
+      // 1. Sign up at https://www.emailjs.com/
+      // 2. Create an email service (Gmail, Outlook, etc.)
+      // 3. Create an email template
+      // 4. Get your Public Key from EmailJS dashboard
+      
+      const serviceID = 'YOUR_SERVICE_ID'
+      const templateID = 'YOUR_TEMPLATE_ID'
+      const publicKey = 'YOUR_PUBLIC_KEY'
+
+      // For now, using a fallback that opens mailto link
+      if (!serviceID || serviceID === 'YOUR_SERVICE_ID') {
+        // Fallback to mailto if EmailJS is not configured
+        const subject = encodeURIComponent(`Contact from ${formData.name}`)
+        const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)
+        window.location.href = `mailto:sindhuyalamati.24s@gmail.com?subject=${subject}&body=${body}`
+        setStatus({ type: 'success', message: 'Opening your email client...' })
+        setLoading(false)
+        return
+      }
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: 'sindhuyalamati.24s@gmail.com'
+      }
+
+      await emailjs.send(serviceID, templateID, templateParams, publicKey)
+      
+      setStatus({ type: 'success', message: 'Message sent successfully! I\'ll get back to you soon.' })
+      setFormData({ name: '', email: '', message: '' })
+    } catch (error) {
+      console.error('Error sending email:', error)
+      setStatus({ 
+        type: 'error', 
+        message: 'Failed to send message. Please try again or contact me directly at sindhuyalamati.24s@gmail.com' 
+      })
+    } finally {
+      setLoading(false)
+    }
   }
 
   const socialLinks = [
@@ -99,8 +151,17 @@ const Contact = () => {
                   required
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-primary">
-                Send Message
+              {status.message && (
+                <div className={`form-status ${status.type === 'success' ? 'success' : 'error'}`}>
+                  {status.message}
+                </div>
+              )}
+              <button 
+                type="submit" 
+                className="btn btn-primary"
+                disabled={loading}
+              >
+                {loading ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>

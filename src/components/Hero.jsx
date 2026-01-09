@@ -35,21 +35,27 @@ const Hero = () => {
             Hi I&apos;m <span className="netflix-hero-name netflix-nowrap">Sindhu Yalamati</span>
           </motion.h1>
           <motion.h2 className="netflix-hero-subtitle" variants={fadeInVariants} custom={2}>
-            DevOps & Full-Stack Developer
+            Full-Stack Developer & AI Engineer
           </motion.h2>
           <motion.p className="netflix-hero-desc small-desc" variants={fadeInVariants} custom={3}>
-            Experienced in building scalable web applications, enhancing UI/UX, and integrating cloud and DevOps solutions. Passionate about leveraging technology to solve real-world problems and improve user experiences.
+            Graduate Research Assistant and AI Software Developer with expertise in building scalable web applications, developing AI automation pipelines, and creating modern UI/UX experiences. Passionate about leveraging cutting-edge technology to solve real-world problems.
           </motion.p>
           <motion.div className="hero-buttons" variants={fadeInVariants} custom={4}>
             <a href="#projects" className="btn btn-primary btn-solid">View My Work</a>
             <a href="#contact" className="btn btn-primary btn-solid">Contact Me</a>
-{/*             <a href="images/Sindhu_resume.pdf" download className="btn btn-primary btn-solid">Download Resume</a>  */}
           </motion.div>
         </motion.div>
       </div>
-      <motion.div className="hero-down-arrow" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 0.7, y: 0 }} transition={{ delay: 1.2, duration: 0.7, type: 'spring' }}>
+      <motion.a 
+        href="#about" 
+        className="hero-down-arrow" 
+        initial={{ opacity: 0, y: 10 }} 
+        animate={{ opacity: 0.7, y: 0 }} 
+        transition={{ delay: 1.2, duration: 0.7, type: 'spring' }}
+        aria-label="Scroll to About section"
+      >
         <FaChevronDown size={32} />
-      </motion.div>
+      </motion.a>
     </section>
   )
 }

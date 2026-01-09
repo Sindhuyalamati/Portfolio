@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { FaGraduationCap, FaUniversity, FaPython, FaJs, FaCode, FaServer, FaCloud, FaCogs, FaFlask, FaDocker, FaAws, FaRobot, FaLeaf, FaCheckCircle, FaRocket, FaTools, FaHtml5, FaCss3Alt, FaDatabase, FaGitAlt, FaGithub, FaTable } from 'react-icons/fa'
-import { SiSupabase, SiJenkins, SiVercel, SiTableau, SiPandas, SiReact } from 'react-icons/si'
+import { SiSupabase, SiJenkins, SiVercel, SiTableau, SiPandas, SiReact, SiFastapi, SiNodedotjs, SiSpring, SiTypescript, SiNextdotjs, SiTailwindcss, SiFigma, SiPostgresql, SiMysql, SiFirebase, SiTerraform } from 'react-icons/si'
 import { TbBolt } from 'react-icons/tb'
 import { MdOutlineSmartToy } from 'react-icons/md'
 import '../styles/About.css'
@@ -12,38 +12,48 @@ const education = [
     school: 'University of Nevada, Reno',
     degree: 'Masters in Computer Science',
     period: '2024–present',
+    gpa: 'GPA: 3.9/4.0',
   },
   {
     icon: <FaGraduationCap color="#ffb300" size={24} />, // bright yellow
     school: 'Sasi Institute of Technology and Engineering',
     degree: 'B.Tech in Computer Science and Engineering',
     period: '2019–2023',
+    gpa: 'GPA: 3.56/4.0',
   },
 ]
 
 // Unified skill cards (icon, name, color)
 const skillCards = [
   { icon: <FaPython color="#3776ab" />, name: 'Python', color: '#3776ab' },
-  { icon: <SiReact color="#61dafb" />, name: 'ReactJS', color: '#61dafb' },
   { icon: <FaJs color="#f7df1e" />, name: 'JavaScript', color: '#f7df1e' },
+  { icon: <SiTypescript color="#3178c6" />, name: 'TypeScript', color: '#3178c6' },
+  { icon: <SiReact color="#61dafb" />, name: 'ReactJS', color: '#61dafb' },
+  { icon: <SiNextdotjs color="#000" />, name: 'Next.js', color: '#fff' },
+  { icon: <SiFastapi color="#009688" />, name: 'FastAPI', color: '#009688' },
+  { icon: <FaFlask color="#000" />, name: 'Flask', color: '#fff' },
+  { icon: <SiNodedotjs color="#339933" />, name: 'Node.js', color: '#339933' },
+  { icon: <SiSpring color="#6db33f" />, name: 'Spring Boot', color: '#6db33f' },
   { icon: <FaHtml5 color="#e44d26" />, name: 'HTML', color: '#e44d26' },
   { icon: <FaCss3Alt color="#1572b6" />, name: 'CSS', color: '#1572b6' },
-  { icon: <FaDatabase color="#336791" />, name: 'PostgreSQL', color: '#336791' },
+  { icon: <SiTailwindcss color="#06b6d4" />, name: 'Tailwind CSS', color: '#06b6d4' },
+  { icon: <SiPostgresql color="#336791" />, name: 'PostgreSQL', color: '#336791' },
+  { icon: <SiMysql color="#4479a1" />, name: 'MySQL', color: '#4479a1' },
+  { icon: <SiFirebase color="#ffca28" />, name: 'Firebase', color: '#ffca28' },
   { icon: <SiSupabase color="#3ecf8e" />, name: 'Supabase', color: '#3ecf8e' },
-  { icon: <SiJenkins color="#d33833" />, name: 'Jenkins', color: '#d33833' },
+  { icon: <FaCloud color="#00bcd4" />, name: 'AWS', color: '#00bcd4' },
   { icon: <SiVercel color="#fff" />, name: 'Vercel', color: '#fff' },
-  { icon: <MdOutlineSmartToy color="#e50914" />, name: 'Cursor', color: '#e50914' },
-  { icon: <TbBolt color="#ffb300" />, name: 'Bolt.diy', color: '#ffb300' },
-  { icon: <SiTableau color="#005f9e" />, name: 'Tableau', color: '#005f9e' },
+  { icon: <FaDocker color="#2496ed" />, name: 'Docker', color: '#2496ed' },
+  { icon: <SiJenkins color="#d33833" />, name: 'Jenkins', color: '#d33833' },
+  { icon: <SiTerraform color="#7b42bc" />, name: 'Terraform', color: '#7b42bc' },
   { icon: <FaGitAlt color="#f34f29" />, name: 'Git', color: '#f34f29' },
   { icon: <FaGithub color="#fff" />, name: 'GitHub', color: '#fff' },
-  { icon: <SiPandas color="#130754" />, name: 'pandas', color: '#130754' },
-  { icon: <FaServer color="#b3b3b3" />, name: 'SQL', color: '#b3b3b3' },
-  { icon: <FaLeaf color="#4caf50" />, name: 'Django', color: '#4caf50' },
-  { icon: <FaCloud color="#00bcd4" />, name: 'AWS', color: '#00bcd4' },
-  { icon: <FaCogs color="#e50914" />, name: 'CI/CD', color: '#e50914' },
-  { icon: <FaDocker color="#2496ed" />, name: 'Docker', color: '#2496ed' },
+  { icon: <SiFigma color="#f24e1e" />, name: 'Figma', color: '#f24e1e' },
   { icon: <FaRobot color="#b3b3b3" />, name: 'Selenium', color: '#b3b3b3' },
+  { icon: <SiPandas color="#130754" />, name: 'Pandas', color: '#130754' },
+  { icon: <SiTableau color="#005f9e" />, name: 'Tableau', color: '#005f9e' },
+  { icon: <MdOutlineSmartToy color="#e50914" />, name: 'Cursor AI', color: '#e50914' },
+  { icon: <TbBolt color="#ffb300" />, name: 'Bolt.diy', color: '#ffb300' },
 ]
 
 const fadeIn = {
@@ -52,11 +62,35 @@ const fadeIn = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.10,
-      duration: 0.7,
-      type: 'spring',
+      delay: Math.min(i * 0.02, 0.4),
+      duration: 0.4,
+      ease: "easeOut",
     },
   }),
+}
+
+const skillsContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.02,
+      delayChildren: 0.05,
+    },
+  },
+}
+
+const skillCardVariants = {
+  hidden: { opacity: 0, y: 20, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut",
+    },
+  },
 }
 
 const CircularProgress = ({ value, color }) => (
@@ -90,34 +124,50 @@ const About = () => {
         <motion.h2 className="about-heading" initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, type: 'spring' }} viewport={{ once: true }}>
           About Me
         </motion.h2>
-        {/* Education Full Width */}
-        <motion.div className="about-education-full" initial="hidden" whileInView="visible" variants={fadeIn} viewport={{ once: true }}>
-          <h3>Education</h3>
-          <ul>
+        {/* Education Section */}
+        <motion.div className="about-education-section" initial="hidden" whileInView="visible" variants={fadeIn} viewport={{ once: true }}>
+          <h3 className="education-heading">Education</h3>
+          <div className="education-cards">
             {education.map((edu, i) => (
-              <li key={i} className="timeline-item">
-                <span className="timeline-icon">{edu.icon}</span>
-                <div className="timeline-content">
-                  <span className="timeline-school">{edu.school}</span>
-                  <span className="timeline-degree">{edu.degree}</span>
-                  <span className="timeline-period">{edu.period}</span>
+              <motion.div
+                key={i}
+                className="education-card"
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                variants={fadeIn}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="education-icon-wrapper">
+                  {edu.icon}
                 </div>
-              </li>
+                <div className="education-content">
+                  <h4 className="education-school">{edu.school}</h4>
+                  <p className="education-degree">{edu.degree}</p>
+                  <div className="education-meta">
+                    <span className="education-period">{edu.period}</span>
+                    <span className="education-gpa">{edu.gpa}</span>
+                  </div>
+                </div>
+              </motion.div>
             ))}
-          </ul>
+          </div>
         </motion.div>
         {/* Unified Skill Cards Grid */}
         <h3 className="skills-cards-heading">My Top Skills</h3>
-        <div className="about-skills-cards-grid">
+        <motion.div 
+          className="about-skills-cards-grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={skillsContainerVariants}
+        >
           {skillCards.map((skill, i) => (
             <motion.div
               className="skill-card"
               key={i}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              variants={fadeIn}
-              viewport={{ once: true }}
+              variants={skillCardVariants}
               whileHover={{ scale: 1.07, boxShadow: `0 8px 32px 0 ${skill.color}44` }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
@@ -127,7 +177,7 @@ const About = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
