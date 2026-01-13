@@ -5,64 +5,67 @@ import '../styles/Experience.css'
 
 const experiences = [
   {
-    role: 'Graduate Research Assistant - Full-Stack Development',
-    company: 'University of Nevada, Reno',
-    period: 'August 2025 – Present',
+    role: 'Software Engineer (Full-Stack)',
+    company: 'Tahoe Institute for Global Sustainability, Nevada',
+    period: 'Aug 2025 – Present',
     icon: <FaBriefcase />,
     details: [
-      'Developing an environmental monitoring platform with FastAPI backend',
-      'Designing and implementing PostgreSQL schemas for data management',
-      'Building React dashboards for data visualization and analysis',
-      'Creating AWS workflows for automated data processing and deployment'
+      'Developed a cloud-integrated environmental monitoring platform',
+      'Built and maintained production-grade RESTful services using FastAPI',
+      'Designed scalable database schemas in PostgreSQL',
+      'Created interactive, map-based dashboards using React, HTML, CSS, and Figma',
+      'Collaborated with environmental research teams'
     ]
   },
   {
-    role: 'AI Software Development Intern - AIJINTSEE',
-    company: 'Pluto in Aquarius LLC',
-    period: 'August 2025 – Present',
+    role: 'Software Engineer (AI & Automation)',
+    company: 'Pluto in Aquarius LLC, Reno NV (Part time)',
+    period: 'Aug 2025 – Present',
     icon: <FaBriefcase />,
     details: [
-      'Building AI marketing automation pipeline for client strategy',
-      'Producing comprehensive client strategy blueprints using AI tools',
-      'Creating brand personas through AI-driven analysis',
-      'Integrating LangChain with FastAPI for seamless AI workflow automation'
+      'Built end-to-end AI marketing automation pipeline',
+      'Produced client Strategy Blueprints',
+      'Created brand personas',
+      'Planned 6-month campaign frameworks',
+      'Designed and implemented microservices-based FastAPI systems integrating LangChain'
     ]
   },
   {
-    role: 'Interface Designer Intern',
-    company: 'SLEKE.',
-    period: 'June 2025 – August 2025',
+    role: 'Software Engineer (UI/UX & Frontend)',
+    company: 'SLEKE., Reno NV',
+    period: 'Jun 2025 – Aug 2025',
     icon: <FaBriefcase />,
     details: [
       'Designed wireframes and interaction flows in Figma',
-      'Refined mobile UI screens with focus on user experience',
-      'Integrated third-party APIs for enhanced functionality',
-      'Developed neumorphic UI system and conducted user testing'
+      'Implemented frontend system design patterns',
+      'Integrated third-party APIs and developed backend features using Spring Boot and PostgreSQL',
+      'Developed and deployed a live neumorphic UI system',
+      'Conducted internal testing and delivered a full design system'
     ]
   },
   {
-    role: 'AI Prompt Engineer & Full-Stack Developer Intern',
-    company: 'FoxTow, Inc',
-    period: 'March 2025 – June 2025',
+    role: 'Software Engineer Intern (Full-Stack & AI)',
+    company: 'FoxTow, Reno NV',
+    period: 'Mar 2025 – Jun 2025',
     icon: <FaBriefcase />,
     details: [
-      'Enhanced web application UI/UX with HTML, CSS, React, and Spring',
-      'Developed new Kits features and improved navigation systems',
-      'Contributed to PostgreSQL database design and optimization',
-      'Utilized Git/GitHub and Cursor AI for efficient development workflows'
+      'Enhanced web application UI/UX',
+      'Developed new Kits features',
+      'Contributed to PostgreSQL database design, query optimization, and backend troubleshooting',
+      'Utilized Git/GitHub and Cursor AI tools'
     ]
   },
   {
-    role: 'QA and DevOps Engineer',
-    company: 'Eficens System',
-    period: '2021–2023',
+    role: 'DevOps Engineer',
+    company: 'Eficens System, Hyderabad, India',
+    period: 'Feb 2021 – Dec 2023',
     icon: <FaTools />,
     details: [
-      'Led QA team for real-time project Flair',
-      'Developed automated test scripts with Selenium and Robot Framework',
-      'Designed and implemented CI/CD pipelines for continuous deployment',
-      'Utilized Terraform for Infrastructure as Code and AWS cloud services',
-      'Managed version control with GitHub and production deployment workflows'
+      'Designed and maintained CI/CD pipelines using Jenkins',
+      'Provisioned and managed scalable cloud infrastructure using Terraform (IaC) across AWS and Azure',
+      'Implemented automated reliability and validation checks with Selenium and Robot Framework',
+      'Collaborated with development and operations teams',
+      'Managed GitHub workflows'
     ]
   }
 ]

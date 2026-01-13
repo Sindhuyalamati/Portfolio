@@ -11,15 +11,15 @@ const education = [
     icon: <FaUniversity color="#00bcd4" size={24} />, // bright cyan
     school: 'University of Nevada, Reno',
     degree: 'Masters in Computer Science',
-    period: '2024–present',
-    gpa: 'GPA: 3.9/4.0',
+    period: 'Jan 2024-present',
+    gpa: 'GPA: 3.9/4',
   },
   {
     icon: <FaGraduationCap color="#ffb300" size={24} />, // bright yellow
-    school: 'Sasi Institute of Technology and Engineering',
-    degree: 'B.Tech in Computer Science and Engineering',
-    period: '2019–2023',
-    gpa: 'GPA: 3.56/4.0',
+    school: 'Sasi Institute of Technology and Engineering, India',
+    degree: 'Bachelors in Computer Science and Engineering',
+    period: 'Aug 2019 – May 2023',
+    gpa: 'GPA: 3.56/4',
   },
 ]
 
