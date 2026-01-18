@@ -38,7 +38,7 @@ const Hero = () => {
             Full-Stack Developer & AI Engineer
           </motion.h2>
           <motion.p className="netflix-hero-desc small-desc" variants={fadeInVariants} custom={3}>
-            Results-driven Full-Stack Software Engineer with 4 years of experience building and deploying end-to-end web applications. Proficient in React, HTML, CSS, FastAPI, Node.js, PostgreSQL, and AWS, with strong experience in UI/UX implementation, scalable API development, and cloud deployment. Skilled in CI/CD automation and DevOps workflows, delivering reliable, high-performance, and user-centric software solutions.
+            Results-driven Full-Stack Software Engineer with 4+ years of experience building and deploying cloud-native web applications. Proficient in React, FastAPI, PostgreSQL, and AWS, with strong expertise in UI/UX, scalable APIs, and CI/CD automation. Improved deployment speed by 40% and system performance and reliability by 30% through optimized backend, infrastructure, and DevOps workflows. Experienced in containerized deployments, managed cloud services, and end-to-end ownership of production systems.
           </motion.p>
           <motion.div className="hero-buttons" variants={fadeInVariants} custom={4}>
             <a href="#projects" className="btn btn-primary btn-solid">View My Work</a>

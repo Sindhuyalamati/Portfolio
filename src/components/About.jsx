@@ -23,37 +23,108 @@ const education = [
   },
 ]
 
-// Unified skill cards (icon, name, color)
-const skillCards = [
-  { icon: <FaPython color="#3776ab" />, name: 'Python', color: '#3776ab' },
-  { icon: <FaJs color="#f7df1e" />, name: 'JavaScript', color: '#f7df1e' },
-  { icon: <SiTypescript color="#3178c6" />, name: 'TypeScript', color: '#3178c6' },
-  { icon: <SiReact color="#61dafb" />, name: 'ReactJS', color: '#61dafb' },
-  { icon: <SiNextdotjs color="#000" />, name: 'Next.js', color: '#fff' },
-  { icon: <SiFastapi color="#009688" />, name: 'FastAPI', color: '#009688' },
-  { icon: <FaFlask color="#000" />, name: 'Flask', color: '#fff' },
-  { icon: <SiNodedotjs color="#339933" />, name: 'Node.js', color: '#339933' },
-  { icon: <SiSpring color="#6db33f" />, name: 'Spring Boot', color: '#6db33f' },
-  { icon: <FaHtml5 color="#e44d26" />, name: 'HTML', color: '#e44d26' },
-  { icon: <FaCss3Alt color="#1572b6" />, name: 'CSS', color: '#1572b6' },
-  { icon: <SiTailwindcss color="#06b6d4" />, name: 'Tailwind CSS', color: '#06b6d4' },
-  { icon: <SiPostgresql color="#336791" />, name: 'PostgreSQL', color: '#336791' },
-  { icon: <SiMysql color="#4479a1" />, name: 'MySQL', color: '#4479a1' },
-  { icon: <SiFirebase color="#ffca28" />, name: 'Firebase', color: '#ffca28' },
-  { icon: <SiSupabase color="#3ecf8e" />, name: 'Supabase', color: '#3ecf8e' },
-  { icon: <FaCloud color="#00bcd4" />, name: 'AWS', color: '#00bcd4' },
-  { icon: <SiVercel color="#fff" />, name: 'Vercel', color: '#fff' },
-  { icon: <FaDocker color="#2496ed" />, name: 'Docker', color: '#2496ed' },
-  { icon: <SiJenkins color="#d33833" />, name: 'Jenkins', color: '#d33833' },
-  { icon: <SiTerraform color="#7b42bc" />, name: 'Terraform', color: '#7b42bc' },
-  { icon: <FaGitAlt color="#f34f29" />, name: 'Git', color: '#f34f29' },
-  { icon: <FaGithub color="#fff" />, name: 'GitHub', color: '#fff' },
-  { icon: <SiFigma color="#f24e1e" />, name: 'Figma', color: '#f24e1e' },
-  { icon: <FaRobot color="#b3b3b3" />, name: 'Selenium', color: '#b3b3b3' },
-  { icon: <SiPandas color="#130754" />, name: 'Pandas', color: '#130754' },
-  { icon: <SiTableau color="#005f9e" />, name: 'Tableau', color: '#005f9e' },
-  { icon: <MdOutlineSmartToy color="#e50914" />, name: 'Cursor AI', color: '#e50914' },
-  { icon: <TbBolt color="#ffb300" />, name: 'Bolt.diy', color: '#ffb300' },
+// Skills organized by categories
+const skillsCategories = [
+  {
+    category: 'Programming Languages',
+    skills: [
+      { icon: <FaPython color="#3776ab" />, name: 'Python', color: '#3776ab' },
+      { icon: <FaJs color="#f7df1e" />, name: 'JavaScript (ES6+)', color: '#f7df1e' },
+      { icon: <SiTypescript color="#3178c6" />, name: 'TypeScript', color: '#3178c6' },
+      { icon: <FaCode color="#555" />, name: 'C', color: '#555' },
+    ]
+  },
+  {
+    category: 'Backend APIs',
+    skills: [
+      { icon: <SiFastapi color="#009688" />, name: 'FastAPI', color: '#009688' },
+      { icon: <FaFlask color="#000" />, name: 'Flask', color: '#fff' },
+      { icon: <SiNodedotjs color="#339933" />, name: 'Node.js', color: '#339933' },
+      { icon: <SiSpring color="#6db33f" />, name: 'Spring Boot', color: '#6db33f' },
+      { icon: <FaServer color="#00bcd4" />, name: 'REST APIs', color: '#00bcd4' },
+      { icon: <FaCheckCircle color="#4caf50" />, name: 'Authentication', color: '#4caf50' },
+      { icon: <FaRocket color="#9c27b0" />, name: 'WebSockets', color: '#9c27b0' },
+    ]
+  },
+  {
+    category: 'Frontend Development',
+    skills: [
+      { icon: <SiReact color="#61dafb" />, name: 'ReactJS', color: '#61dafb' },
+      { icon: <SiNextdotjs color="#000" />, name: 'Next.js', color: '#fff' },
+      { icon: <FaHtml5 color="#e44d26" />, name: 'HTML', color: '#e44d26' },
+      { icon: <FaCss3Alt color="#1572b6" />, name: 'CSS', color: '#1572b6' },
+      { icon: <SiTailwindcss color="#06b6d4" />, name: 'Tailwind CSS', color: '#06b6d4' },
+      { icon: <FaCheckCircle color="#00bcd4" />, name: 'Responsive UI Components', color: '#00bcd4' },
+      { icon: <SiFigma color="#f24e1e" />, name: 'Modern UI/UX Practices', color: '#f24e1e' },
+    ]
+  },
+  {
+    category: 'Database Technologies',
+    skills: [
+      { icon: <SiPostgresql color="#336791" />, name: 'PostgreSQL', color: '#336791' },
+      { icon: <SiMysql color="#4479a1" />, name: 'MySQL', color: '#4479a1' },
+      { icon: <SiFirebase color="#ffca28" />, name: 'Firebase', color: '#ffca28' },
+      { icon: <FaDatabase color="#00bcd4" />, name: 'SQL (queries & indexing)', color: '#00bcd4' },
+      { icon: <FaTable color="#9c27b0" />, name: 'Time-Series & Geospatial Modeling', color: '#9c27b0' },
+    ]
+  },
+  {
+    category: 'Cloud & DevOps',
+    skills: [
+      { icon: <FaCloud color="#00bcd4" />, name: 'AWS (S3, RDS, ECR, CloudFront, App Runner, EC2, Route53, IAM)', color: '#00bcd4' },
+      { icon: <SiVercel color="#fff" />, name: 'Vercel', color: '#fff' },
+      { icon: <SiSupabase color="#3ecf8e" />, name: 'Supabase', color: '#3ecf8e' },
+      { icon: <FaCheckCircle color="#4caf50" />, name: 'Ngrok', color: '#4caf50' },
+      { icon: <FaDocker color="#2496ed" />, name: 'Docker', color: '#2496ed' },
+      { icon: <SiJenkins color="#d33833" />, name: 'Jenkins', color: '#d33833' },
+      { icon: <SiTerraform color="#7b42bc" />, name: 'Terraform', color: '#7b42bc' },
+      { icon: <FaGitAlt color="#f34f29" />, name: 'Git/GitHub', color: '#f34f29' },
+      { icon: <FaCogs color="#00bcd4" />, name: 'CI/CD', color: '#00bcd4' },
+      { icon: <FaRocket color="#ff9800" />, name: 'IaC', color: '#ff9800' },
+    ]
+  },
+  {
+    category: 'Testing & Automation',
+    skills: [
+      { icon: <FaRobot color="#b3b3b3" />, name: 'Selenium', color: '#b3b3b3' },
+      { icon: <FaCheckCircle color="#4caf50" />, name: 'Robot Framework', color: '#4caf50' },
+      { icon: <FaTools color="#ff9800" />, name: 'Automated Testing', color: '#ff9800' },
+      { icon: <FaCheckCircle color="#2196f3" />, name: 'QA Processes', color: '#2196f3' },
+      { icon: <FaCogs color="#f44336" />, name: 'Debugging & Troubleshooting', color: '#f44336' },
+    ]
+  },
+  {
+    category: 'AI & Data Tools',
+    skills: [
+      { icon: <FaCheckCircle color="#e50914" />, name: 'Prompt Engineering', color: '#e50914' },
+      { icon: <MdOutlineSmartToy color="#e50914" />, name: 'GPT-based Automation', color: '#e50914' },
+      { icon: <SiPandas color="#130754" />, name: 'Pandas', color: '#130754' },
+      { icon: <MdOutlineSmartToy color="#e50914" />, name: 'Cursor AI', color: '#e50914' },
+      { icon: <TbBolt color="#ffb300" />, name: 'Bolt.diy', color: '#ffb300' },
+      { icon: <FaRocket color="#9c27b0" />, name: 'AI Workflow Integration', color: '#9c27b0' },
+    ]
+  },
+  {
+    category: 'UI/UX & Visualization',
+    skills: [
+      { icon: <SiFigma color="#f24e1e" />, name: 'Figma (systems, wireframes, prototyping)', color: '#f24e1e' },
+      { icon: <FaLeaf color="#4caf50" />, name: 'Leaflet.js', color: '#4caf50' },
+      { icon: <FaCheckCircle color="#2196f3" />, name: 'Interactive Maps', color: '#2196f3' },
+      { icon: <SiTableau color="#005f9e" />, name: 'Tableau', color: '#005f9e' },
+      { icon: <FaCheckCircle color="#ff9800" />, name: 'Postman', color: '#ff9800' },
+      { icon: <FaCode color="#007acc" />, name: 'VS Code', color: '#007acc' },
+    ]
+  },
+  {
+    category: 'Other Skills',
+    skills: [
+      { icon: <FaCheckCircle color="#00bcd4" />, name: 'Linux', color: '#00bcd4' },
+      { icon: <FaCheckCircle color="#0078d4" />, name: 'Windows', color: '#0078d4' },
+      { icon: <FaRocket color="#4caf50" />, name: 'Agile Methodologies', color: '#4caf50' },
+      { icon: <FaCode color="#555" />, name: 'Bash Scripting', color: '#555' },
+      { icon: <FaRocket color="#ff9800" />, name: 'Production Deployment Workflows', color: '#ff9800' },
+    ]
+  },
 ]
 
 const fadeIn = {
@@ -154,30 +225,40 @@ const About = () => {
             ))}
           </div>
         </motion.div>
-        {/* Unified Skill Cards Grid */}
-        <h3 className="skills-cards-heading">My Top Skills</h3>
-        <motion.div 
-          className="about-skills-cards-grid"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={skillsContainerVariants}
-        >
-          {skillCards.map((skill, i) => (
+        {/* Skills by Categories - Badge Style */}
+        <h3 className="skills-cards-heading">Skills</h3>
+        <div className="skills-categories-container">
+          {skillsCategories.map((category, catIdx) => (
             <motion.div
-              className="skill-card"
-              key={i}
-              variants={skillCardVariants}
-              whileHover={{ scale: 1.07, boxShadow: `0 8px 32px 0 ${skill.color}44` }}
-              transition={{ type: 'spring', stiffness: 300 }}
+              key={catIdx}
+              className="skill-category"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={skillsContainerVariants}
             >
-              <div className="skill-icon" style={{ color: skill.color, fontSize: '2.2rem', marginBottom: '1.2rem' }}>{skill.icon}</div>
-              <div className="skill-info">
-                <span className="skill-name">{skill.name}</span>
-              </div>
+              <h4 className="skill-category-heading">{category.category}</h4>
+              <motion.div 
+                className="skills-badges-container"
+                variants={skillsContainerVariants}
+              >
+                {category.skills.map((skill, i) => (
+                  <motion.span
+                    className="skill-badge"
+                    key={i}
+                    variants={skillCardVariants}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    transition={{ type: 'spring', stiffness: 400 }}
+                    style={{ '--skill-color': skill.color }}
+                  >
+                    <span className="skill-badge-icon">{skill.icon}</span>
+                    <span className="skill-badge-name">{skill.name}</span>
+                  </motion.span>
+                ))}
+              </motion.div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

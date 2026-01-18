@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaCheck, FaBriefcase, FaTools } from 'react-icons/fa'
+import { FaCheck, FaBriefcase, FaTools, FaCloud, FaDatabase, FaReact, FaAws, FaDocker, FaPython, FaBrain } from 'react-icons/fa'
+import { SiFastapi, SiPostgresql, SiSpring, SiReact, SiFigma, SiJenkins, SiTerraform } from 'react-icons/si'
 import '../styles/Experience.css'
 
 const experiences = [
@@ -9,12 +10,13 @@ const experiences = [
     company: 'Tahoe Institute for Global Sustainability, Nevada',
     period: 'Aug 2025 – Present',
     icon: <FaBriefcase />,
+    techIcons: [<SiFastapi key="fastapi" />, <SiPostgresql key="postgres" />, <SiReact key="react" />, <FaAws key="aws" />, <FaDocker key="docker" />],
     details: [
-      'Developed a cloud-integrated environmental monitoring platform',
-      'Built and maintained production-grade RESTful services using FastAPI',
-      'Designed scalable database schemas in PostgreSQL',
-      'Created interactive, map-based dashboards using React, HTML, CSS, and Figma',
-      'Collaborated with environmental research teams'
+      'Developed and deployed an end-to-end, cloud-based environmental monitoring platform on AWS, supporting real-time watershed and ecosystem data collection from distributed sensors',
+      'Containerized backend services using Docker and deployed via AWS ECR and App Runner, enabling scalable RESTful APIs with managed infrastructure',
+      'Built production-grade RESTful APIs using FastAPI for real-time sensor ingestion, improving data throughput by 40% and enabling secure pipelines to AWS S3',
+      'Designed scalable PostgreSQL database schemas and indexing strategies for high-throughput time-series and geospatial data, reducing query latency by 30%',
+      'Deployed a static frontend to AWS S3 and CloudFront, delivering globally cached, low-latency access to interactive dashboards built with React, HTML, and CSS'
     ]
   },
   {
@@ -22,12 +24,13 @@ const experiences = [
     company: 'Pluto in Aquarius LLC, Reno NV (Part time)',
     period: 'Aug 2025 – Present',
     icon: <FaBriefcase />,
+    techIcons: [<SiFastapi key="fastapi" />, <FaBrain key="ai" />, <FaPython key="python" />, <FaCloud key="cloud" />],
     details: [
-      'Built end-to-end AI marketing automation pipeline',
-      'Produced client Strategy Blueprints',
-      'Created brand personas',
-      'Planned 6-month campaign frameworks',
-      'Designed and implemented microservices-based FastAPI systems integrating LangChain'
+      'Built an end-to-end AI marketing automation pipeline with intake chatbots, strategy generation, and automated content workflows',
+      'Produced client Strategy Blueprints using SWOT, Blue Ocean, 7 Powers, and BCG frameworks, reducing prep time by 50%',
+      'Created brand personas, emotional identities, and SPARK-based messaging from structured client interview data',
+      'Planned 6-month campaigns and 30-day content calendars, enabling 40% faster LLM-driven content turnaround',
+      'Designed microservices-based FastAPI systems with LangChain pipelines for scalable, multi-client content generation'
     ]
   },
   {
@@ -35,12 +38,13 @@ const experiences = [
     company: 'SLEKE., Reno NV',
     period: 'Jun 2025 – Aug 2025',
     icon: <FaBriefcase />,
+    techIcons: [<SiFigma key="figma" />, <SiReact key="react" />, <SiSpring key="spring" />, <SiPostgresql key="postgres" />],
     details: [
-      'Designed wireframes and interaction flows in Figma',
-      'Implemented frontend system design patterns',
+      'Designed wireframes and interaction flows in Figma to define core user journeys, reducing design iteration time by 30%',
+      'Implemented frontend design patterns emphasizing accessibility, responsive layouts, and performance optimization, improving UI responsiveness by 25%',
       'Integrated third-party APIs and developed backend features using Spring Boot and PostgreSQL',
-      'Developed and deployed a live neumorphic UI system',
-      'Conducted internal testing and delivered a full design system'
+      'Developed and deployed a live neumorphic UI system across Sleke screens in collaboration with developers',
+      'Conducted internal user testing and delivered a complete design system covering spacing, typography, icons, colors, and components'
     ]
   },
   {
@@ -48,11 +52,12 @@ const experiences = [
     company: 'FoxTow, Reno NV',
     period: 'Mar 2025 – Jun 2025',
     icon: <FaBriefcase />,
+    techIcons: [<SiReact key="react" />, <SiSpring key="spring" />, <SiPostgresql key="postgres" />, <FaPython key="python" />],
     details: [
-      'Enhanced web application UI/UX',
-      'Developed new Kits features',
-      'Contributed to PostgreSQL database design, query optimization, and backend troubleshooting',
-      'Utilized Git/GitHub and Cursor AI tools'
+      'Enhanced web application UI/UX using HTML, CSS, React, and Spring to improve design consistency, responsiveness, and usability',
+      'Developed new Kits features with full-stack technologies while integrating third-party APIs and backend logic in PostgreSQL',
+      'Contributed to PostgreSQL database design, query optimization, and backend troubleshooting for stable, high-performance operation',
+      'Utilized Git/GitHub and Cursor AI tools for efficient version control, prompt engineering, testing, and automation workflows'
     ]
   },
   {
@@ -60,12 +65,13 @@ const experiences = [
     company: 'Eficens System, Hyderabad, India',
     period: 'Feb 2021 – Dec 2023',
     icon: <FaTools />,
+    techIcons: [<SiJenkins key="jenkins" />, <SiTerraform key="terraform" />, <FaAws key="aws" />, <FaCloud key="cloud" />],
     details: [
-      'Designed and maintained CI/CD pipelines using Jenkins',
-      'Provisioned and managed scalable cloud infrastructure using Terraform (IaC) across AWS and Azure',
-      'Implemented automated reliability and validation checks with Selenium and Robot Framework',
-      'Collaborated with development and operations teams',
-      'Managed GitHub workflows'
+      'Designed and maintained CI/CD pipelines using Jenkins for real-time production systems, reducing deployment time by 40%',
+      'Provisioned and managed scalable cloud infrastructure with Terraform (IaC) across AWS and Azure, ensuring high availability',
+      'Implemented automated reliability and validation checks using Selenium and Robot Framework, improving release stability by 30%',
+      'Collaborated with development and operations teams to streamline deployments, monitoring, and release processes',
+      'Managed GitHub workflows for version control, CI/CD integration, and infrastructure change management'
     ]
   }
 ]
@@ -113,6 +119,23 @@ const Experience = () => (
               {idx < experiences.length - 1 && <div className="timeline-line" />}
             </div>
             <div className="experience-card">
+              {exp.techIcons && (
+                <div className="experience-tech-icons">
+                  {exp.techIcons.map((techIcon, techIdx) => (
+                    <motion.div
+                      key={techIdx}
+                      className="tech-icon-wrapper"
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: idx * 0.15 + techIdx * 0.05, duration: 0.3 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.2, y: -3 }}
+                    >
+                      {techIcon}
+                    </motion.div>
+                  ))}
+                </div>
+              )}
               <div className="experience-header">
                 <div className="experience-title-row">
                   <h3>{exp.role}</h3>
