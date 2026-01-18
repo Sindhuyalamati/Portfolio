@@ -156,11 +156,6 @@ const Projects = () => {
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <FaGithub /> Code
                     </a>
-                    {project.live && (
-                      <a href={project.live} target="_blank" rel="noopener noreferrer">
-                        <FaExternalLinkAlt /> Live Demo
-                      </a>
-                    )}
                   </div>
                 </div>
               </motion.div>
